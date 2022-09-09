@@ -23,6 +23,13 @@ router.put("/:id", async (req, res) => {
     res.status(500).json(error);
   }
 });
-// router.delete("/:id");
+router.delete("/:id", async (req, res) => {
+  try {
+    await Hotel.findByIdAndDelete(req.params.id);
+    res.status(200).send("hotel delete successfully");
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
 // router.get("/find/:id");
 export default router;
