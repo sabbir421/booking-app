@@ -8,8 +8,8 @@ router.get("/", (req, res) => {
 router.get("/signup", (req, res) => {
   res.send("authentication get method for registation");
 });
-router.get("/login", (req, res) => {
-  res.send("auth login route");
-});
+// router.get("/login", (req, res) => {
+//   res.send("auth login route");
+// });
 
 export default router;
