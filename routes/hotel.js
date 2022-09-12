@@ -31,5 +31,23 @@ router.delete("/:id", async (req, res) => {
     res.status(500).json(error);
   }
 });
+//get single hotel
+router.get("/:id", async (req, res) => {
+  try {
+    const hotel = await Hotel.findById(req.params.id);
+    res.status(200).json(hotel);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
+// get all hotels
+router.get("/", async (req, res) => {
+  try {
+    const hotels = await Hotel.find();
+    res.status(200).json(hotels);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
 // router.get("/find/:id");
 export default router;
